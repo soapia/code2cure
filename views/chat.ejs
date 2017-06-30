@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code2Cure</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        
+    </head>
+    <style>
+
+.message-container {
+  display: block;
+  margin-top: 10px;
+  border-top: 1px solid #f3f3f3;
+  padding-top: 10px;
+  /*opacity: 0;*/
+  /*transition: opacity 1s ease-in-out;*/
+}
+.message-container.visible {
+  /*opacity: 1;*/
+}
+.message-container .pic {
+  background-image: url('https://epgl.unige.ch/labs/FATEC/img/required/empty_user.png');
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+  border-radius: 20px;
+}
+.message-container .spacing {
+  display: table-cell;
+  vertical-align: top;
+}
+.message-container .message {
+  display: table-cell;
+  width: calc(100% - 40px);
+  padding: 5px 0 5px 10px;
+}
+.message-container .name {
+  display: inline-block;
+  width: 100%;
+  padding-left: 40px;
+  color: #bbb;
+  font-style: italic;
+  font-size: 12px;
+  box-sizing: border-box;
+}    
+    </style>
+<body>
+
+         <div id="header">
+                    
+            
+            <strong><a style="color:black" href="/dashboard">BACK TO DASHBOARD</a></strong>
+        
+        </div>
+  
+             <div class = "container" style="height:70px;width:60%;overflow:auto;background-color:grey;color:white;scrollbar-base-color:gold;font-family:sans-serif;padding:10px;">
+                 <h1>CHAT ROOM</h1>
+            </div>
+            <div id="chatHolder" class = "container" style="height:500px;width:60%;overflow:auto;background-color:pink;color:white;scrollbar-base-color:gold;font-family:sans-serif;padding:10px;">
+                <% var messageKeys = Object.keys(messages)  %>
+                
+                <% messageKeys.forEach(function(key){ %>
+                        <div class="message-container">
+                          <div class="spacing"><div class="pic"><img src="" /></div></div>
+                          <div class="message"><%= messages[key].text %></div>
+                          <div class="name"><%= messages[key].name %></div>
+                        </div>    
+                <% }) %>                        
+            </div>
+            <div class = "container" style="height:70px;width:60%;overflow:auto;background-color:grey;color:white;scrollbar-base-color:gold;font-family:sans-serif;padding:10px;">
+            
+                        <div class = "inputbox" class="input-box">
+                                            <form method="post" action="/chat">
+                                              Enter your name and message:<br>
+                                              <input id="personinput" type="text" name="person" />
+                                              <input type="text" name="message" />
+                                              <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                                            </form>
+                                            </div>
+            </div>
+            
+            
+                  <!--  <div id="footer">-->
+                  <!--<p class="footer-block">-->
+            
+                     <!--</p>-->
+                     <!-- </div>-->
+                     
+            </div>
+                    
+                    
+            
+     <script>
+    //   if (localStorage.getItem('email') {
+    //     document.getElementById('personinput').setAttribute('value', localStorage.getItem('email'))    
+    //   } else {
+    //     document.getElementById('personinput').style.visibility = 'visible'
+    //     document.getElementById('personinput').style.display = 'inline-block'        
+    //   }
+    </script>           
+            
+
+
+</body>
+</html>

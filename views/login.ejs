@@ -1,0 +1,35 @@
+<!DOCTYPE hmtl>
+<html>
+        <head><title>Login</title>
+        <link rel="stylesheet" href="css/logsign.css">
+        </head>
+        <body style="background-color:#FBEFF2;">
+        <div id="header">
+                    
+            
+                <strong><a style="color:black" href="/">HOME</a></strong>
+        
+            </div>
+            <div style = "text-align:center">
+        <h1>Code2Cure</h1>
+        <h3>Login</h3>
+        <% if (!!error) { %>
+               <p> <%= error %> </p>
+        <% } %>
+        <div class="jumbotron">
+                   <form action='/login' method='post'>
+                <p>Email: <input type='text' name='email'/></p>
+                <p>Password: <input type='password' name='password'/></p>
+                <button type = 'submit'>Log In</button>
+                </form>
+                
+            <p>Don't have an account?<a href="/signup">Sign up here</a></p>    
+        
+
+                </div>
+               
+        
+        </div>
+        </body>
+        
+</html>
